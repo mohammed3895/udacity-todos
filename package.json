@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "client:install": "cd todos/client && npm install",
+    "client:build": "cd todos/client && npm run build",
+    "client:start": "cd todos/client && npm start",
+    "client:deploy": "cd todos/client && npm run deploy",
+    "server:install": "cs todos/server && npm install",
+    "server:build": "cd todos/server && npm run build",
+    "server:start": "cd todos/server && npm run build && npm start",
+    "server:deploy": "cd todos/server && npm run deploy",
+    "deploy": "npm run server:deploy && npm run client:deploy"
+  }
+}
