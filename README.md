@@ -8,4 +8,3 @@
 
 ### This is Demo app .
 
-#### fetch data from database .
