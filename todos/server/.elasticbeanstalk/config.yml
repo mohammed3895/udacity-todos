@@ -3,8 +3,8 @@ branch-defaults:
     environment: todos
 environment-defaults:
   todos:
-    branch: null
-    repository: null
+    branch: main
+    repository: https://github.com/mohammed3895/udacity-todos.git
 global:
   application_name: server
   default_ec2_keyname: todos
