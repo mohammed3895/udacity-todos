@@ -11,4 +11,4 @@
 
 ### First you need manual approve
 
-    and after that CircleCi will compress and upload api to Elastickbeans & front end to s3 bucket
+    and after that CircleCi will compress and upload api to Elasticbeanstalk & front end to s3 bucket
