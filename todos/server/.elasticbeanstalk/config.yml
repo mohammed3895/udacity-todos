@@ -1,0 +1,19 @@
+branch-defaults:
+  default:
+    environment: todos
+environment-defaults:
+  todos:
+    branch: null
+    repository: null
+global:
+  application_name: server
+  default_ec2_keyname: todos
+  default_platform: Node.js 16 running on 64bit Amazon Linux 2
+  default_region: us-east-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: null
+  sc: null
+  workspace_type: Application
