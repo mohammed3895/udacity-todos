@@ -10,5 +10,4 @@ export const config = {
   aws_region: process.env.AWS_REGION,
   aws_access_id: process.env.AWS_ACCESS_ID,
   aws_secret_key: process.env.AWS_SECRET_KEY,
-  aws_media_bucket: process.env.AWS_BUCKET,
 };

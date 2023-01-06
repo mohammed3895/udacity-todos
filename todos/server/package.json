@@ -10,7 +10,7 @@
     "prod": "npx tsc && node ./dist/server.js",
     "clean": "rm -rf dist/ || true",
     "deploy": "npm run build && eb list && eb use todos && eb deploy",
-    "build": "npm install . && npm run clean && tsc && cp -rf src/config dist/config && cp -R .elasticbeanstalk dist/.elasticbeanstalk && cp .npmrc dist/.npmrc && cp package.json dist/package.json && cd dist && zip -r Archive.zip . && cd ..",
+    "build": "npm install && npm run clean && tsc && cp -rf src/config dist/config && cp -R .elasticbeanstalk dist/.elasticbeanstalk && cp .npmrc dist/.npmrc && cp package.json dist/package.json && cd dist && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
