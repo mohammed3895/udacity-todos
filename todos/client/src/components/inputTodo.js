@@ -9,7 +9,7 @@ function InputTodo() {
     try {
       const body = { description };
       await fetch(
-        "http://demotodos-env.eba-eg59rqym.us-east-1.elasticbeanstalk.com/todos",
+        "http://todos.eba-pvvacchm.us-east-1.elasticbeanstalk.com/todos",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

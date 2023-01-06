@@ -8,7 +8,7 @@ const ListTodos = () => {
   const getTodos = async () => {
     try {
       const res = await fetch(
-        "http://demotodos-env.eba-eg59rqym.us-east-1.elasticbeanstalk.com/todos"
+        "http://todos.eba-pvvacchm.us-east-1.elasticbeanstalk.com/todos"
       );
       const data = await res.json();
 
@@ -22,7 +22,7 @@ const ListTodos = () => {
   const deletTodo = async (id) => {
     try {
       await fetch(
-        `http://demotodos-env.eba-eg59rqym.us-east-1.elasticbeanstalk.com/todos/${id}`,
+        `http://todos.eba-pvvacchm.us-east-1.elasticbeanstalk.com/todos/${id}`,
         {
           method: "DELETE",
         }

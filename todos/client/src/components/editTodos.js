@@ -9,7 +9,7 @@ const EditTodos = ({ todo }) => {
     try {
       const body = { description };
       await fetch(
-        `http://demotodos-env.eba-eg59rqym.us-east-1.elasticbeanstalk.com/todos/${todo.id}`,
+        `http://todos.eba-pvvacchm.us-east-1.elasticbeanstalk.com/todos/${todo.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
