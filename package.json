@@ -9,5 +9,8 @@
     "server:start": "cd todos/server && npm run build && npm start",
     "server:deploy": "cd todos/server && npm run deploy",
     "deploy": "npm run server:deploy && npm run client:deploy"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18"
   }
 }
