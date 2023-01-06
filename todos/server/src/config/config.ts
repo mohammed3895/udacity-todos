@@ -8,6 +8,7 @@ export const config = {
   database: process.env.POSTGRES_DB,
   host: process.env.POSTGRES_HOST,
   aws_region: process.env.AWS_REGION,
-  aws_profile: process.env.AWS_PROFILE,
+  aws_access_id: process.env.AWS_ACCESS_ID,
+  aws_secret_key: process.env.AWS_SECRET_KEY,
   aws_media_bucket: process.env.AWS_BUCKET,
 };

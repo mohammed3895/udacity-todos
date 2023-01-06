@@ -11,7 +11,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: "cimg/node:14.15"
+      - image: "cimg/node:18.12"
     steps:
       - node/install:
           node-version: "18.12"
@@ -46,7 +46,7 @@ jobs:
           command: |
             npm run deploy
 workflows:
-  udagram:
+  udacity-todos:
     jobs:
       - build
       - deploy
