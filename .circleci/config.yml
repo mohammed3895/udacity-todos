@@ -1,20 +1,17 @@
-# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
 version: 2.1
-
-# Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
-# See: https://circleci.com/docs/2.0/orb-intro/
 orbs:
   node: circleci/node@4.7
-  eb: circleci/aws-elastic-beanstalk@2.0.1
-  aws-cli: circleci/aws-cli@3.1.1
-
-jobs:
-  build:
+workflows:
+  udacity-todos:
+    jobs:
+      version: "16.10"
+      pkg-manager: npm
+    build:
     docker:
-      - image: "cimg/node:18.12"
+      - image: "cimg/node:16.10"
     steps:
       - node/install:
-          node-version: "18.12"
+          node-version: "16.10"
       - checkout
       - run:
           name: Install Front-End Dependencies
@@ -32,21 +29,16 @@ jobs:
           name: API Build
           command: |
             npm run server:build
-  deploy:
-    docker:
-      - image: "cimg/base:stable"
-    steps:
-      - node/install:
-          node-version: "14.15"
-      - eb/setup
-      - aws-cli/setup
-      - checkout
-      - run:
-          name: Deploy App
-          command: |
-            npm run deploy
-workflows:
-  udacity-todos:
-    jobs:
-      - build
-      - deploy
+    deploy:
+      docker:
+        - image: "cimg/base:stable"
+      steps:
+        - node/install:
+            node-version: "16.10"
+        - eb/setup
+        - aws-cli/setup
+        - checkout
+        - run:
+            name: Deploy App
+            command: |
+              npm run deploy
