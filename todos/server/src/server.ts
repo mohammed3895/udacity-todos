@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import todos_route from './handlers/todos.handler'
-import { Sequelize } from 'sequelize';
+import { Sequelize } from 'sequelize-typescript';
 
 
 

@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Router } from 'express'
 import { Todos, TodosList } from '../models/todos'
 
 const store = new TodosList()
