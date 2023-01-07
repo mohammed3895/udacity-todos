@@ -7,7 +7,7 @@ import { Sequelize } from 'sequelize-typescript';
 
 
 const app: express.Application = express()
-const port = 4000
+const port = process.env.PORT || 5000
 
 const sequelize = new Sequelize(
   "postgres://postgres:pass123456@database-1.cu0xr9ccvyp4.us-east-1.rds.amazonaws.com:5432/postgres"
