@@ -9,7 +9,7 @@
     "dev": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
     "prod": "npx tsc && node ./dist/server.js",
     "clean": "rm -rf dist/ || true",
-    "deploy": "npm run build && eb list && eb use server && eb deploy && chmod +x ./set_env.sh && ./set_env.sh",
+    "deploy": "npm run build && eb list && eb use todos && eb deploy && chmod +x ./set_env.sh && ./set_env.sh",
     "build": "npm install && npm run clean && tsc && cp -rf src/config dist/config && cp -R .elasticbeanstalk dist/.elasticbeanstalk && cp .npmrc dist/.npmrc && cp package.json dist/package.json && cd dist && zip -r Archive.zip . && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
