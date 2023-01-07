@@ -37,7 +37,6 @@ const create = async (req: express.Request, res: express.Response): Promise<void
         const newTodo: Todos = await store.create(todoItem)
         res.json(newTodo)
     } catch (err) {
-        res.status(401)
         res.json(err)
     }
 }
