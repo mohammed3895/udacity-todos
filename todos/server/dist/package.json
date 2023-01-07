@@ -1,0 +1,44 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ./server.js",
+    "tsc": "npx tsc",
+    "dev": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
+    "prod": "npx tsc && node ./dist/server.js",
+    "clean": "rm -rf dist/ || true",
+    "deploy": "npm run build && eb list && eb use todos-env && eb deploy && chmod +x ./set_env.sh && ./set_env.sh",
+    "build": "npm install && npm run clean && tsc && cp -rf src/config dist/config && cp -R .elasticbeanstalk dist/.elasticbeanstalk && cp .npmrc dist/.npmrc && cp package.json dist/package.json && cd dist && zip -r Archive.zip . && cd ..",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/supertest": "^2.0.12",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "db-migrate-pg": "^1.2.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "pg": "^8.8.0",
+    "sequelize-typescript": "^2.1.5"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.13",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.15",
+    "@types/jsonwebtoken": "^9.0.0",
+    "@types/node": "^18.11.17",
+    "@types/pg": "^8.6.6",
+    "@types/sequelize": "^4.28.14",
+    "db-migrate": "^0.11.13",
+    "jasmine": "^4.5.0",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.28.0",
+    "supertest": "^6.3.3",
+    "ts-node": "^10.9.1"
+  }
+}
