@@ -1,4 +1,4 @@
-import express, { Router } from 'express'
+import express from 'express'
 import { Todos, TodosList } from '../models/todos'
 
 const store = new TodosList()
@@ -12,7 +12,6 @@ const index = async (_req: express.Request, res: express.Response): Promise<void
     }
 }
 
-// SHOWING SINGLE PRODUCT
 const show = async (req: express.Request, res: express.Response): Promise<void> => {
     try {
         const todos = await store.show(req.params.id)
@@ -22,7 +21,6 @@ const show = async (req: express.Request, res: express.Response): Promise<void> 
     }
 }
 
-// CREATE NEW PRODUCT
 const create = async (req: express.Request, res: express.Response): Promise<void> => {
     const todoItem: Todos = {
         description: req.body.description as string
@@ -32,7 +30,6 @@ const create = async (req: express.Request, res: express.Response): Promise<void
         res.json({ messege: 'please enter what to do' })
     }
 
-    // CREATE NEW PRODUCT IF TOKEN IS VALID
     try {
         const newTodo: Todos = await store.create(todoItem)
         res.json(newTodo)
@@ -41,7 +38,6 @@ const create = async (req: express.Request, res: express.Response): Promise<void
     }
 }
 
-// UPDATE PRODUCT
 const update = async (req: express.Request, res: express.Response): Promise<void> => {
     try {
         const updated = await store.update({
@@ -54,7 +50,6 @@ const update = async (req: express.Request, res: express.Response): Promise<void
     }
 }
 
-// DELETE PRODUCT
 const remove = async (req: express.Request, res: express.Response): Promise<void> => {
     try {
         const removed = await store.delete(req.params.id)
@@ -63,7 +58,6 @@ const remove = async (req: express.Request, res: express.Response): Promise<void
         res.json(err)
     }
 }
-
 
 
 // PRODUCTS ROUTES
