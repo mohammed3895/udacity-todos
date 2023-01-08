@@ -1,9 +1,5 @@
 import client from '../database'
-import { Sequelize } from 'sequelize-typescript';
 
-const sequelize = new Sequelize(
-    "postgres://postgres:pass123456@database-1.cu0xr9ccvyp4.us-east-1.rds.amazonaws.com:5432/postgres"
-    );
 
 
 export type Todos = {
