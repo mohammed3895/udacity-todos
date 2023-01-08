@@ -1,6 +1,6 @@
 branch-defaults:
   default:
-    environment: todos-env
+    environment: todo-env
 environment-defaults:
   todos-env:
     branch: null
