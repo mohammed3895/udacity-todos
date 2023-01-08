@@ -1,8 +1,8 @@
 branch-defaults:
   default:
-    environment: todos
+    environment: todos-env
 environment-defaults:
-  todos:
+  todos-env:
     branch: null
     repository: null
 global:
